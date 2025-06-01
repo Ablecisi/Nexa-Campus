@@ -1,0 +1,4 @@
+// 顶级构建文件，您可以在其中添加所有子项目/模块通用的配置选项。
+plugins {
+    alias(libs.plugins.android.application) apply false
+}
