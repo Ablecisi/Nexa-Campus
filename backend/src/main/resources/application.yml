@@ -6,6 +6,7 @@ spring:
     active: dev # 激活的环境
   application:
     name: Nexa Campus Backend ${nc.project-name} # 项目名称
+    version: ${nc.project-version} # 项目版本
   main:
     allow-circular-references: true # 允许循环依赖
   # mysql
@@ -21,6 +22,10 @@ spring:
       database: ${nc.redis.database} # redis数据库
   cache:
     type: redis # 缓存类型
+  security:
+    user:
+      name: admin # 默认用户名
+      password: 123456 # 默认用户密码
 
 springdoc:
   api-docs:
