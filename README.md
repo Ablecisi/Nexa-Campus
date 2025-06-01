@@ -13,6 +13,8 @@
 </div>
 正式环境访问: https://m.nexacampus.top/
 
+### [Ablecisi的个人主页](https://github.com/Ablecisi)
+
 ### 📝 序言
 
 📱 将微信小程序纳入技术栈后，系统将升级为 <font color="#FF8C00">**Spring Boot (后端) + Vue+Vite (Web管理端) + 微信小程序 (
