@@ -6,8 +6,7 @@
 *.xml linguist-language=Java
 *.css linguist-language=CSS
 *.sql linguist-language=MySQL
-*.uml linguist-language=Java 
-*.cmd linguist-language=Java
 *.java linguist-language=Java
 *.vue linguist-language=Vue
 *.scss linguist-language=Scss
+*.gradle linguist-language=Android
