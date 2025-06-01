@@ -1,0 +1,65 @@
+server:
+  port: ${nc.server.port} # 服务端口
+
+spring:
+  profiles:
+    active: dev # 激活的环境
+  application:
+    name: Nexa Campus Backend ${nc.project-name} # 项目名称
+  main:
+    allow-circular-references: true # 允许循环依赖
+  # mysql
+  datasource:
+    driver-class-name: ${nc.datasource.driver-class-name} # 数据库驱动
+    url: ${nc.datasource.url} # 数据库连接地址
+    username: ${nc.datasource.username} # 数据库用户名
+    password: ${nc.datasource.password} # 数据库密码
+  data:
+    redis:
+      host: ${nc.redis.host} # redis地址
+      port: ${nc.redis.port} # redis端口
+      database: ${nc.redis.database} # redis数据库
+  cache:
+    type: redis # 缓存类型
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+mybatis:
+  #mapper配置文件
+  mapper-locations: classpath:mapper/*.xml # mapper文件地址
+  type-aliases-package: top.nexacampus.entity # 实体类包名
+  configuration:
+    #开启驼峰命名
+    map-underscore-to-camel-case: true
+
+logging:
+  level:
+    top:
+      nexacampus:
+        mapper: debug # mapper日志级别
+        service: info # service日志级别
+        controller: info # controller日志级别
+
+nc:
+  jwt:
+    adminSecretKey: ${nc.jwt.adminSecretKey} # 设置jwt签名加密时使用的秘钥
+    # (60(秒 = 1分钟) * 60(分钟 = 1小时) * 2 * 1000(单位是毫秒所以*1000)) = 2小时
+    adminTtl: ${nc.jwt.adminTtl} # 设置jwt过期时间
+    adminTokenName: ${nc.jwt.adminTokenName} # 设置前端传递过来的令牌名称
+    user-secret-key: ${nc.jwt.user-secret-key} # 用户秘钥
+    user-token-name: ${nc.jwt.user-token-name} # 用户令牌名称
+    user-ttl: ${nc.jwt.user-ttl} # 用户过期时间
+
+  alioss:
+    endpoint: ${nc.alioss.endpoint} # oss地址
+    accessKeyId: ${nc.alioss.accessKeyId} # oss id
+    accessKeySecret: ${nc.alioss.accessKeySecret} # oss密钥
+    bucketName: ${nc.alioss.bucketName} # oss存储名
+    folderName: ${nc.alioss.folderName} # oss存储的文件夹名
+
+
+
