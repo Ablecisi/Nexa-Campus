@@ -12,6 +12,7 @@
         									       @Powered by Ablecisi
 </div>
 正式环境访问: https://m.nexacampus.top/
+[![联界校园](https://img.shields.io/badge/Address-💕-pink.svg)](https://github.com/Ablecisi/Nexa-Campus)
 
 ### [Ablecisi的个人主页](https://github.com/Ablecisi)
 
