@@ -48,7 +48,7 @@ public class JwtTokenUserInterceptor implements HandlerInterceptor {
         //判断当前拦截到的是Controller的方法还是其他资源
         if (!(handler instanceof HandlerMethod)) {
             //当前拦截到的不是动态方法，直接放行
-            System.out.println("当前拦截到的不是动态方法，直接放行");
+            log.info("当前拦截到的不是动态方法，直接放行");
             return true;
         }
 
@@ -79,7 +79,7 @@ public class JwtTokenUserInterceptor implements HandlerInterceptor {
         } catch (Exception ex) {
             //4、不通过，响应状态码401
             response.setStatus(401);
-            System.out.println("jwt校验失败" + ex.getMessage());
+            log.info("jwt校验失败{}", ex.getMessage());
             return false;
         }
     }
