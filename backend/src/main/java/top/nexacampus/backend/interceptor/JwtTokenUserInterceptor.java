@@ -10,8 +10,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 import top.nexacampus.backend.common.constant.JwtClaimsConstant;
+import top.nexacampus.backend.common.constant.MessageConstant;
 import top.nexacampus.backend.common.context.BaseContext;
-import top.nexacampus.backend.common.context.MessageConstant;
 import top.nexacampus.backend.common.properties.JwtProperties;
 import top.nexacampus.backend.common.utils.JwtUtil;
 

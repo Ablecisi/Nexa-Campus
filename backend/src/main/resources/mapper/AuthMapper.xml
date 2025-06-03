@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!--
+  创建时间：2025/6/2 21:20
+  作者：Ablecisi
+-->
+<mapper namespace="top.nexacampus.backend.mapper.AuthMapper">
+    <insert id="insert">
+        INSERT INTO nexacampus.nc_user (wechat_openid, real_name, create_time, update_time) VALUES
+        (#{wechatOpenid}, #{realName}, #{createTime}, #{updateTime})
+    </insert>
+
+    <select id="getUserByUser" resultType="User" >
+        select * from nexacampus.nc_user
+        <where>
+            <if test="userId != null and userId != ''">
+                and id = #{userId}
+            </if>
+            <if test="studentNo != null and studentNo != ''">
+                and student_no = #{studentNo}
+            </if>
+            <if test="realName != null and realName != ''">
+                and realname = #{realName}
+            </if>
+            <if test="password != null and password != ''">
+                and password = #{password}
+            </if>
+            <if test="phone != null and phone != ''">
+                and phone = #{phone}
+            </if>
+            <if test="email != null and email != ''">
+                and email = #{email}
+            </if>
+            <if test="gender != null and gender != ''">
+                and gender = #{gender}
+            </if>
+            <if test="birthDate != null and birthDate != ''">
+                and birth_date = #{birthDate}
+            </if>
+            <if test="wechatOpenid != null and wechatOpenid != ''">
+                and wechat_openid = #{wechatOpenid}
+            </if>
+            <if test="deptId != null and deptId != ''">
+                and dept_id = #{deptId}
+            </if>
+            <if test="avatarUrl != null and avatarUrl != ''">
+                and avatar_url = #{avatarUrl}
+            </if>
+            <if test="status != null and status != ''">
+                and status = #{status}
+            </if>
+        </where>
+        order by update_time desc
+    </select>
+    <select id="getUserByOpenId" resultType="top.nexacampus.backend.pojo.entity.User">
+        select * from nexacampus.nc_user
+        where wechat_openid = #{wechatOpenid}
+    </select>
+</mapper>

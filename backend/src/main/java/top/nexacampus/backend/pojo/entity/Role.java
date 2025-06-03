@@ -1,6 +1,5 @@
 package top.nexacampus.backend.pojo.entity;
 
-import io.swagger.annotations.ApiModel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,14 +22,13 @@ import java.time.LocalDateTime;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@ApiModel(description = "系统角色实体类")
 public class Role implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 
-    private Long roleId;
-    private String roleName;
-    private String description;
-    private LocalDateTime createTime;
+    private Long roleId; // 角色ID
+    private String roleName; // 角色名称
+    private String description; // 角色描述
+    private LocalDateTime createTime; // 创建时间
 
 }

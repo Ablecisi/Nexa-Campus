@@ -1,7 +1,6 @@
 package top.nexacampus.backend.pojo.entity;
 
 
-import io.swagger.annotations.ApiModel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -24,7 +23,6 @@ import java.time.LocalDateTime;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@ApiModel(description = "场地预约实体类")
 public class VenueBooking implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;

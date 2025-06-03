@@ -3,7 +3,7 @@ package top.nexacampus.backend.handler;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import top.nexacampus.backend.common.context.MessageConstant;
+import top.nexacampus.backend.common.constant.MessageConstant;
 import top.nexacampus.backend.common.exception.BaseException;
 import top.nexacampus.backend.common.result.Result;
 

@@ -11,6 +11,7 @@ spring:
     allow-circular-references: true # 允许循环依赖
   # mysql
   datasource:
+    type: com.alibaba.druid.pool.DruidDataSource # 数据源类型
     driver-class-name: ${nc.datasource.driver-class-name} # 数据库驱动
     url: ${nc.datasource.url} # 数据库连接地址
     username: ${nc.datasource.username} # 数据库用户名
@@ -27,16 +28,10 @@ spring:
       name: admin # 默认用户名
       password: 123456 # 默认用户密码
 
-springdoc:
-  api-docs:
-    path: /v3/api-docs
-  swagger-ui:
-    path: /swagger-ui.html
-
 mybatis:
   #mapper配置文件
-  mapper-locations: classpath:mapper/*.xml # mapper文件地址
-  type-aliases-package: top.nexacampus.entity # 实体类包名
+  mapper-locations: classpath:mapper/*.xml # mapper文件地址, 用于存放MyBatis的XML映射文件
+  type-aliases-package: top.nexacampus.backend.pojo.entity # 实体类包名
   configuration:
     #开启驼峰命名
     map-underscore-to-camel-case: true
@@ -45,9 +40,11 @@ logging:
   level:
     top:
       nexacampus:
-        mapper: debug # mapper日志级别
-        service: info # service日志级别
-        controller: info # controller日志级别
+        backend:
+          controller: info # 控制器日志级别
+          service: info # 服务日志级别
+          mapper: debug # Mapper日志级别
+          config: debug # 配置类日志级别
 
 nc:
   jwt:
@@ -65,6 +62,18 @@ nc:
     accessKeySecret: ${nc.alioss.accessKeySecret} # oss密钥
     bucketName: ${nc.alioss.bucketName} # oss存储名
     folderName: ${nc.alioss.folderName} # oss存储的文件夹名
+
+  wechat:
+    api-v3-key: ${sky.wechat.api-v3-key} # 微信支付v3秘钥
+    appid: ${sky.wechat.appid} # 微信appid
+    mch-serial-no: ${sky.wechat.mch-serial-no} # 微信商户证书序列号
+    mchid: ${sky.wechat.mchid} # 微信商户号
+    notify-url: ${sky.wechat.notify-url} # 微信支付回调地址
+    private-key-file-path: ${sky.wechat.private-key-file-path} # 微信支付私钥文件路径
+    refund-notify-url: ${sky.wechat.refund-notify-url} # 微信退款回调地址
+    secret: ${sky.wechat.secret} # 微信支付密钥
+    we-chat-pay-cert-file-path: ${sky.wechat.we-chat-pay-cert-file-path} # 微信支付证书文件路径
+
 
 
 

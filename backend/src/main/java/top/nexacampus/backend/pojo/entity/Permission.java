@@ -1,6 +1,5 @@
 package top.nexacampus.backend.pojo.entity;
 
-import io.swagger.annotations.ApiModel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,15 +22,14 @@ import java.time.LocalDateTime;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@ApiModel(description = "系统权限实体类")
 public class Permission implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 
-    private String permCode;
-    private String name;
-    private String description;
-    private String category;
-    private LocalDateTime createTime;
+    private String permCode; // 权限代码
+    private String name; // 权限名称
+    private String description; // 权限描述
+    private String category; // 权限分类
+    private LocalDateTime createTime; // 创建时间
 
 }

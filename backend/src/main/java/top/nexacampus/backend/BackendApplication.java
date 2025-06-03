@@ -1,6 +1,7 @@
 package top.nexacampus.backend;
 
 import lombok.extern.slf4j.Slf4j;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.annotation.EnableCaching;
@@ -12,6 +13,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableCaching //开启注解方式的缓存管理
 @EnableScheduling // 开启注解方式的定时任务
 @Slf4j
+@MapperScan("top.nexacampus.backend.mapper") // 扫描Mapper接口所在的包
 public class BackendApplication {
 
     public static void main(String[] args) {
