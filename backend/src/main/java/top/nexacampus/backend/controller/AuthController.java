@@ -23,7 +23,7 @@ import top.nexacampus.backend.service.AuthService;
  * 19:29
  **/
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("/api/auth")
 @Slf4j
 public class AuthController {
     private final AuthService authService;
